@@ -1,0 +1,56 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="ThrowablePrintStackTrace" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Tests" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+          <option value="currency-api" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="commons-codec:commons-codec:1.11" />
+          <option value="log4j:log4j:1.2.17" />
+          <option value="org.json:json:20160810" />
+          <option value="com.google.guava:guava:19.0" />
+          <option value="commons-beanutils:commons-beanutils:1.9.2" />
+          <option value="commons-collections:commons-collections:3.2.2" />
+          <option value="com.google.code.gson:gson:2.5" />
+          <option value="com.squareup.okio:okio:1.6.0" />
+          <option value="org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <option value="org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <option value="com.google.guava:guava:28.2-android" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
