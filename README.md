@@ -3,6 +3,9 @@ This API is used to fetch the current currency values.
 
 **Language used:** Java
 
+**git clone:** https://github.com/Brijendra9322/currencyAPI.git
+**branch :** master
+
 **library used :** Cucumber, Rest Assured ,JUnit,Jdk 22
 
 **Build tool:** Maven
