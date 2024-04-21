@@ -1,4 +1,3 @@
-
 **Currency API**
 This API is used to fetch the current currency values.
 
@@ -20,15 +19,15 @@ branch :main
 **Run the runner file:**
 src-> test/java/runner/TestRunner.java (right click)
 
-**Run the test using Maven:**
-
-mvn clean verify
-
 **report is under target folder:**
 
 Cucumber-reports.html (open in chrome or any browser)
 
-**Maven genrated report:**
+**Run the test using Maven:**
+
+mvn clean verify
+
+**Maven generated report:**
 
 target/cucumber-reports/cucumber-html-reports/overview-reports.html
 
@@ -37,10 +36,8 @@ target/cucumber-reports/cucumber-html-reports/overview-reports.html
 
 **Project Structure:**
 
-src/test/java/runner
-src/test/java/stepDfinition
-src/test/java/utils
-src/test/resources/features/currency.feature
+![image](https://github.com/Brijendra9322/currencyAPI/assets/13295851/851c3fdb-7e64-4a34-b111-819489246da4)
+
 
 **API Reference:**
 https://open.er-api.com
