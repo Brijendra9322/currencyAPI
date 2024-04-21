@@ -9,8 +9,9 @@ This API is used to fetch the current currency values.
 
 **Setup the project:**
 
-1.git clone https://github.com/Brijendra9322/currencyAPI.git
-branch :main
+1.**git clone https://github.com/Brijendra9322/currencyAPI.git**
+
+**branch:** main
 
 2. **install cucumber,gherkin plugins in Intellij**
    
