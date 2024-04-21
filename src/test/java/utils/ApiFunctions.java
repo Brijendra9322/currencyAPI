@@ -74,40 +74,8 @@ public class ApiFunctions {
             String propertyType = getPropertyType(propertyValue);
             propertiesNode.set(propertyName, getPropertySchema(propertyValue, propertyType));
         });
-
         schemaNode.set("properties", propertiesNode);
-
         return schemaNode.toString();
-    }
-
-    private static JsonNode generatePropertySchema(JsonNode propertyValue, ObjectMapper objectMapper) {
-        if (propertyValue.isObject()) {
-            // If the property value is an object, recursively generate its schema
-            ObjectNode objectSchema = objectMapper.createObjectNode();
-            ObjectNode propertiesNode = objectMapper.createObjectNode();
-            propertyValue.fields().forEachRemaining(entry -> {
-                String nestedPropertyName = entry.getKey();
-                JsonNode nestedPropertyValue = entry.getValue();
-                JsonNode nestedPropertySchema = generatePropertySchema(nestedPropertyValue, objectMapper);
-                propertiesNode.set(nestedPropertyName, nestedPropertySchema);
-            });
-            objectSchema.set("properties", propertiesNode);
-            objectSchema.put("type", "object");
-            return objectSchema;
-        } else if (propertyValue.isArray()) {
-            // If the property value is an array, recursively generate its schema
-            ArrayNode arraySchema = objectMapper.createArrayNode();
-            if (!propertyValue.isEmpty()) {
-                JsonNode firstElement = propertyValue.get(0);
-                JsonNode elementSchema = generatePropertySchema(firstElement, objectMapper);
-                arraySchema.add(elementSchema);
-            }
-            return arraySchema;
-        } else {
-            // For other types, determine the property type
-            String propertyType = getPropertyType(propertyValue);
-            return objectMapper.createObjectNode().put("type", propertyType);
-        }
     }
 
     private static ObjectNode getPropertySchema(JsonNode propertyValue, String propertyType) {
@@ -151,57 +119,5 @@ public class ApiFunctions {
             return "string";
         }
 
-    }
-
-    public static boolean compareSchemas(String expectedSchema, String actualSchema) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            JsonNode expectedJson = objectMapper.readTree(expectedSchema);
-            JsonNode actualJson = objectMapper.readTree(actualSchema);
-            return compareJsonNodes(expectedJson, actualJson);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    private static boolean compareJsonNodes(JsonNode expectedNode, JsonNode actualNode) {
-        // Compare the type of nodes
-        if (!expectedNode.getNodeType().equals(actualNode.getNodeType())) {
-            return false;
-        }
-
-        // Compare the structure and content of objects and arrays
-        if (expectedNode.isObject()) {
-            if (!actualNode.isObject()) {
-                return false;
-            }
-            for (Iterator<String> it = expectedNode.fieldNames(); it.hasNext(); ) {
-                String fieldName = it.next();
-                if (!actualNode.has(fieldName)) {
-                    return false;
-                }
-                if (!compareJsonNodes(expectedNode.get(fieldName), actualNode.get(fieldName))) {
-                    return false;
-                }
-            }
-            return true;
-        } else if (expectedNode.isArray()) {
-            if (!actualNode.isArray()) {
-                return false;
-            }
-            if (expectedNode.size() != actualNode.size()) {
-                return false;
-            }
-            for (int i = 0; i < expectedNode.size(); i++) {
-                if (!compareJsonNodes(expectedNode.get(i), actualNode.get(i))) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        // For other node types, compare the content
-        return expectedNode.equals(actualNode);
     }
 }
