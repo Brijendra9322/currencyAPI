@@ -1,6 +1,6 @@
 Feature: To Validate USD rates against multiple currency
 
-  @sanity
+  @valid
   Scenario Outline: Verify valid Currency Api
     Given User has '<endpoint>'
     When User hit the '<endpoint>' for currency
@@ -12,7 +12,7 @@ Feature: To Validate USD rates against multiple currency
       | endpoint       | statusCode | status  | range   | pairs |
       | /v6/latest/USD | 200        | success | 3.6-3.7 | 162   |
 
-  @smoke
+  @invalid
   Scenario Outline: verify invalid Currency Api
     Given User has '<endpoint>'
     When User hit the '<endpoint>' for currency
@@ -21,7 +21,7 @@ Feature: To Validate USD rates against multiple currency
       | endpoint      | status |
       | /v6/latest/US | error  |
 
-  @regression
+  @schema
   Scenario Outline: verify schema with Currency Api response
     Given User has '<endpoint>'
     When User hit the '<endpoint>' for currency

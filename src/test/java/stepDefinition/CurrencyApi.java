@@ -84,7 +84,6 @@ public class CurrencyApi {
     @And("^response and Json schema should be match with '(.+)'$")
     public void response_and_json_schema_should_be_match(String url) throws Exception {
         commonApiMethods.validateSchema(url, schema);
-
     }
 }
 

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = {"stepDefinition"},
         plugin = {"pretty", "json:target/cucumber.json", "html:target/cucumber-reports.html"},
         monochrome = true,
-        tags = "@regression or @sanity or @smoke",
+        tags = "@valid or @invalid or @schema",
         dryRun = false
 )
 
