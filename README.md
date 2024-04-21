@@ -1,4 +1,5 @@
 **Currency API**
+
 This API is used to fetch the current currency values.
 
 **Language used:** Java
@@ -43,3 +44,7 @@ target/cucumber-reports/cucumber-html-reports/overview-reports.html
 **API Reference:**
 https://open.er-api.com
 endpoint : /v6/latest/USD
+
+**Connect:**
+
+**linkedin:** https://www.linkedin.com/in/brijendrasingh1/
