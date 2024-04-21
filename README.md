@@ -14,7 +14,7 @@ This API is used to fetch the current currency values.
 branch :main
 
 2. **install cucumber,gherkin plugins in Intellij**
-3. 
+   
 **To run the test:**
 
 **Run the runner file:**
