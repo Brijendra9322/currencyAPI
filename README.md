@@ -1,3 +1,4 @@
+
 **Currency API**
 This API is used to fetch the current currency values.
 
@@ -7,6 +8,13 @@ This API is used to fetch the current currency values.
 
 **Build tool:** Maven
 
+**Setup the project:**
+
+1.git clone https://github.com/Brijendra9322/currencyAPI.git
+branch :main
+
+2. **install cucumber,gherkin plugins in Intellij**
+3. 
 **To run the test:**
 
 **Run the runner file:**
