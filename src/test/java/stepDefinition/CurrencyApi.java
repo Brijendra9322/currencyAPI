@@ -39,20 +39,20 @@ public class CurrencyApi {
 
     }
 
-    @Then("^Api should return the '(.+)' for currency$")
+    @Then("^API should return the '(.+)' for currency$")
     public void api_should_return_the_for_currency(int code) {
         assertEquals(statusCode, code);
         logger.info("Status code is: " + statusCode);
     }
 
-    @Then("^Api should return the '(.+)' message$")
+    @Then("^API should return the '(.+)' message$")
     public void api_should_return_the_message_for(String status) {
         String result = JsonPath.read(response, "$.result");
         assertEquals(result, status);
         logger.info("Status is: " + result);
     }
 
-    @Then("^Api should fetch the USD price against AED with '(.+)'$")
+    @Then("^API should fetch the USD price against AED with '(.+)'$")
     public void api_should_fetch_the_u_sd_price_against_aed_with(String range) {
         double aed = JsonPath.read(response, "$.rates.AED");
         logger.info("price of AED is: " + aed);
@@ -62,7 +62,7 @@ public class CurrencyApi {
         Assert.assertTrue(aed >= lowerPrice && aed <= upperPrice);
     }
 
-    @Then("^Api should return '(.+)' currency pairs$")
+    @Then("^API should return '(.+)' currency pairs$")
     public void api_should_return_currency_pairs(int pairs) {
         List<String> currencyCount = JsonPath.read(response, "$.rates.*");
         int count = currencyCount.size();
